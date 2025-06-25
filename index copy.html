@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezhra - Career & Networking Platform</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 56px;
+            /* Height of fixed navbar */
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            color: #764ba2 !important;
+        }
+
+        .nav-link {
+            padding: 8px 16px !important;
+            margin: 0 5px;
+            border-radius: 20px;
+            color: #667eea !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: #764ba2;
+            color: white !important;
+        }
+
+        .nav-link.active {
+            background: #667eea;
+            color: white !important;
+        }
+
+        .navbar-toggler {
+            border-color: #764ba2;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(118, 75, 162, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .card {
+            transition: transform 0.3s;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .clips-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .chatbot-iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section .form-control {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 12px;
+        }
+
+        .contact-section .btn-primary {
+            background: #764ba2;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .contact-section .btn-primary:hover {
+            background: #667eea;
+        }
+
+        .contact-info {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .connection-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .connection-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .connection-card .btn-outline-primary {
+            border-color: #764ba2;
+            color: #764ba2;
+            transition: all 0.3s;
+        }
+
+        .connection-card .btn-outline-primary:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        .chatbot-container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .clips-video {
+                height: 250px;
+            }
+
+            .chatbot-iframe {
+                height: 400px;
+            }
+
+            .contact-section {
+                padding: 20px;
+            }
+
+            .connection-card img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .nav-link {
+                padding: 6px 12px !important;
+                margin: 2px 0;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Ezhra</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jobs">Jobs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#clips">Clips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#connections">Connections</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Resume Parsing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#chatbot">Career Chatbot</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Welcome to Ezrha</h1>
+            <p class="lead">Your one-stop platform for career growth, networking, and opportunities</p>
+            <a href="#events" class="btn btn-light btn-lg mt-3">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Upcoming Events</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87" class="card-img-top"
+                            alt="Career Fair">
+                        <div class="card-body">
+                            <h5 class="card-title">Career Fair 2025</h5>
+                            <p class="card-text">Join top companies and network with industry leaders.</p>
+                            <p><strong>Date:</strong> July 10, 2025</p>
+                            <a href="#" class="btn btn-primary">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" class="card-img-top"
+                            alt="Tech Summit">
+                        <div class="card-body">
+                            <h5 class="card-title">Tech Summit</h5>
+                            <p class="card-text">Explore the latest trends in technology.</p>
+                            <p><strong>Date:</strong> August 15, 2025</p>
+                            <a href="#" class="btn btn-primary">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678" class="card-img-top"
+                            alt="Resume Workshop">
+                        <div class="card-body">
+                            <h5 class="card-title">Resume Workshop</h5>
+                            <p class="card-text">Learn to craft a winning resume.</p>
+                            <p><strong>Date:</strong> June 30, 2025</p>
+                            <a href="#" class="btn btn-primary">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section id="jobs" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Job Opportunities</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87" class="card-img-top"
+                            alt="Software Engineer">
+                        <div class="card-body">
+                            <h5 class="card-title">Software Engineer</h5>
+                            <p class="card-text">Join our tech team to build cutting-edge solutions.</p>
+                            <p><strong>Location:</strong> Remote</p>
+                            <a href="#" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" class="card-img-top"
+                            alt="Marketing Specialist">
+                        <div class="card-body">
+                            <h5 class="card-title">Marketing Specialist</h5>
+                            <p class="card-text">Drive our brand growth with creative campaigns.</p>
+                            <p><strong>Location:</strong> New York, NY</p>
+                            <a href="#" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clips Section -->
+    <section id="clips" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Clips</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <video class="clips-video" controls>
+                        <source src="https://devclips.s3.us-west-2.amazonaws.com/job_portal.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="text-center mt-2">Career Tips #1</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <video class="clips-video" controls>
+                        <source src="https://devclips.s3.us-west-2.amazonaws.com/MKBHD.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="text-center mt-2">Interview Hacks</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <video class="clips-video" controls>
+                        <source src="https://devclips.s3.us-west-2.amazonaws.com/AI_tools_devops.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="text-center mt-2">Networking 101</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connections Section -->
+    <section id="connections" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Build Your Network</h2>
+            <p class="text-center mb-5">Connect with professionals to grow your career and share opportunities.</p>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="connection-card">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+                            class="rounded-circle mb-3" alt="John Doe">
+                        <h5 class="mt-2">John Doe</h5>
+                        <p class="text-muted">Software Engineer</p>
+                        <p class="small">Expert in full-stack development and cloud solutions.</p>
+                        <a href="#" class="btn btn-outline-primary">Connect</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="connection-card">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+                            class="rounded-circle mb-3" alt="Jane Smith">
+                        <h5 class="mt-2">Jane Smith</h5>
+                        <p class="text-muted">Marketing Manager</p>
+                        <p class="small">Specialist in digital campaigns and brand strategy.</p>
+                        <a href="#" class="btn btn-outline-primary">Connect</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="connection-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+                            class="rounded-circle mb-3" alt="Alex Brown">
+                        <h5 class="mt-2">Alex Brown</h5>
+                        <p class="text-muted">Data Scientist</p>
+                        <p class="small">Passionate about AI and predictive analytics.</p>
+                        <a href="#" class="btn btn-outline-primary">Connect</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="connection-card">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9"
+                            class="rounded-circle mb-3" alt="Emily Davis">
+                        <h5 class="mt-2">Emily Davis</h5>
+                        <p class="text-muted">UX Designer</p>
+                        <p class="small">Creating user-friendly designs for seamless experiences.</p>
+                        <a href="#" class="btn btn-outline-primary">Connect</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Parsing Section -->
+    <section id="resume" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Resume Parsing</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4>Upload Your Resume</h4>
+                    <p>Our AI-powered tool analyzes your resume and provides personalized feedback.</p>
+                    <div class="form-group">
+                        <input type="file" class="form-control" accept=".pdf,.docx">
+                        <button type="button" class="btn btn-primary mt-2">Analyze</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Sample Feedback</h4>
+                    <ul>
+                        <li>Improve action verbs in experience section.</li>
+                        <li>Add quantifiable achievements.</li>
+                        <li>Highlight technical skills.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Chatbot Section -->
+    <section id="chatbot" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Career Chatbot</h2>
+            <div class="chatbot-container">
+                <p class="text-center mb-4">Get personalized career advice instantly with our AI-powered chatbot. Ask
+                    about:</p>
+                <ul class="list-unstyled text-center mb-4">
+                    <li><i class="fas fa-check-circle text-primary me-2"></i>Resume optimization tips</li>
+                    <li><i class="fas fa-check-circle text-primary me-2"></i>Interview preparation strategies</li>
+                    <li><i class="fas fa-check-circle text-primary me-2"></i>Career path guidance</li>
+                </ul>
+                <div class="text-center mb-4">
+                    <a href="#" class="btn btn-primary">Start Chatting</a>
+                </div>
+                <!-- <iframe class="chatbot-iframe" src="#"></iframe> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Chatbot Section -->
+    <!-- <section id="chatbot" class="section bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Career Chatbot</h2>
+        <p class="text-center mb-4 lead">Get personalized career advice on the go with our AI-powered chatbot in the Ezhra mobile app!</p>
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-4">
+                <img src="https://images.unsplash.com/photo-1618477461853-fd4ede3230d0?auto=format&fit=crop&w=600&q=80" alt="Mobile app screenshot" class="img-fluid rounded shadow mb-3" style="max-height: 400px;">
+                <p class="mb-3">Ask about:</p>
+                <ul class="list-unstyled mb-4">
+                    <li><i class="fas fa-check-circle text-primary me-2"></i>Resume optimization tips</li>
+                    <li><i class="fas fa-check-circle text-primary me-2"></i>Interview preparation strategies</li>
+                    <li><i class="fas fa-check-circle text-primary me-2"></i>Career path guidance</li>
+                </ul>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="https://play.google.com/store" target="_blank" class="btn btn-outline-primary">
+                        <i class="fab fa-google-play me-2"></i> Get on Google Play
+                    </a>
+                    <a href="https://www.apple.com/app-store/" target="_blank" class="btn btn-outline-primary">
+                        <i class="fab fa-app-store me-2"></i> Get on App Store
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">About Ezrha</h2>
+            <p class="lead text-center">Ezrha is a career and networking platform designed to empower professionals with
+                tools and opportunities to grow. From job searches to networking events, we’ve got you covered.</p>
+            <p class="text-center">Our mission is to connect talent with opportunity and foster career development
+                through innovative solutions.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Get in Touch</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="contact-info">
+                        <h4>Contact Information</h4>
+                        <p><strong>Email:</strong> support@Ezrha.com</p>
+                        <p><strong>Phone:</strong> +1 (800) 123-4567</p>
+                        <p><strong>Address:</strong> 123 Career St, Opportunity City, USA</p>
+                        <div class="mt-3">
+                            <a href="#" class="text-decoration-none me-3"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="#" class="text-decoration-none me-3"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#" class="text-decoration-none"><i class="fab fa-instagram"></i> Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form class="border border-primary-subtle p-4 rounded-3">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>© 2025 Ezrha. All rights reserved.</p>
+            <p><a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
