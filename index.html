@@ -7,122 +7,16 @@
     <title>Ezhra - Career & Networking Platform</title>
     <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
     <link rel="icon" type="image/x-icon" href="./ezrha-favicon.png">
+    <link rel="stylesheet" href="css/style.css" />
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <style>
-        html,
-        body {
-            height: 100%;
-            scroll-behavior: smooth;
-        } 
 
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding-top: 56px;
-            overflow-x: hidden;
-            position: relative;
-        }
 
-        .navbar {
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .navbar-brand {
-            color: #764ba2 !important;
-        }
-
-        .nav-link {
-            padding: 8px 16px !important;
-            margin: 0 5px;
-            border-radius: 20px;
-            color: #667eea !important;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover {
-            background: #764ba2;
-            color: white !important;
-        }
-
-        .nav-link.active {
-            background: #667eea;
-            color: white !important;
-        }
-
-        .navbar-toggler {
-            border-color: #764ba2;
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 15px;
-            text-align: center;
-            background: linear-gradient(135deg, #f0f2f5, #ffffff);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .coming-soon-container {
-            animation: fadeIn 2s ease-in-out;
-            z-index: 1;
-        }
-
-        .coming-soon-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
-            transition: transform 0.5s ease;
-        }
-
-        .coming-soon-image:hover {
-            transform: scale(1.05);
-        }
-
-        footer {
-            background-color: #1a1a1a;
-            color: white;
-            padding: 40px 0;
-        } 
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Circle Effect */
-        .circle {
-            width: 60px;
-            height: 60px;
-            background-color: #146fd8;
-            border-radius: 50%;
-            position: absolute;
-            z-index: 0;
-            overflow: auto;
-        }
-
-        .exploding {
-            background-color: red;
-            /* transform: scale(2) rotate(20deg); */
-            opacity: 0;
-            transition: all 0.6s ease-out;
-        }
-    </style>
 </head>
 
 <body>
@@ -131,106 +25,87 @@
         <div class="container">
             <!-- <a class="navbar-brand fw-bold" href="#">Ezhra</a> -->
             <!-- <img src="./ezrha-logo.png" alt="Ezhra Logo" class="navbar-logo"> -->
-            <img src="./ezrha-logo.png" alt="Ezhra Logo" class="navbar-logo" style="height: 40px; margin-left: 0px;">
+            <img src="./ezrha-logo.png" alt="Ezhra Logo" class="navbar-logo" style="height: 40px; margin-left: 10px;">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#jobs">Jobs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#clips">Clips</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#connections">Connections</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#resume">Resume Parsing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#chatbot">Career Chatbot</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div> -->
         </div>
     </nav>
 
     <!-- Main Content -->
     <main>
         <div class="coming-soon-container">
-            <img src="./coming-soon_img-new.png" alt="Coming Soon" class="coming-soon-image" />
-            <h2 class="mt-4 text-primary">We’re launching Ezrha soon!</h2>
+            <h1 class="font">Coming soon...</h1>
+            <h2 class="mt-4">We’re launching Ezrha soon!</h2>
         </div>
+
+       <!--  Need Help Section -->
+    <section class="help-section py-5 text-center">
+      <div class="container">
+        <h2 class="fw-bold mb-5">Need Help?</h2>
+        <div class="row justify-content-center g-4">
+
+          <!-- General Inquiries -->
+          <div class="col-md-4">
+            <div class="help-card shadow-sm p-4 rounded-4">
+              <div class="icon-box bg-light-primary mb-3 mx-auto">
+                <i class="bi bi-chat-left-text fs-2 text-primary"></i>
+              </div>
+              <h5 class="fw-semibold">General Inquiries</h5>
+              <a href="contact.html" class="text-primary fw-medium mt-2 d-block">Contact Us</a>
+            </div>
+          </div>
+
+          <!-- Join Provider Network -->
+          <div class="col-md-4">
+            <div class="help-card shadow-sm p-4 rounded-4">
+              <div class="icon-box bg-light-success mb-3 mx-auto">
+                <i class="bi bi-person-plus fs-2 text-success"></i>
+              </div>
+              <h5 class="fw-semibold text-nowrap">Join Provider Network</h5>
+              <a href="#" class="text-success fw-medium mt-2 d-block">Become a Provider</a>
+            </div>
+          </div>
+
+          <!-- Data Removal Request -->
+          <div class="col-md-4">
+            <div class="help-card shadow-sm p-4 rounded-4">
+              <div class="icon-box bg-light-danger mb-3 mx-auto">
+                <i class="bi bi-trash3 fs-2 text-danger"></i>
+              </div>
+              <h5 class="fw-semibold text-nowrap">Data Removal Request</h5>
+              <a href="Data-Removal.html" class="text-danger fw-medium mt-2 d-block">Request Removal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     </main>
 
-   <footer class="text-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-auto">
-                <p class="mb-2 mb-md-0">&copy; <span id="currentYear"></span> Ezrha. All rights reserved.</p>
-            </div>
-            <div class="col-md-auto">
-                <p class="mb-0">
-                    <a href="#" class="text-white me-2">Privacy Policy</a> |
-                    <a href="#" class="text-white ms-2">Terms of Service</a>
-                </p>
-            </div>
+    <footer class="text-center footer-section">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-md-6 mb-2 mb-md-0">
+            <p class="mb-0">&copy; <span id="currentYear"></span> Ezrha. All rights reserved.</p>
+          </div>
+          <div class="col-12 col-md-6">
+            <ul class="footer-links list-inline mb-0">
+              <li class="list-inline-item"><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li class="list-inline-item"><a href="terms.html">Terms of Service</a></li>
+              <li class="list-inline-item"><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<script>
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-</script>
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Circle Explosion Script -->
-    <script>
-        setInterval(() => {
-            for (let i = 0; i < 10; i++) {
-                setTimeout(() => {
-                    let c = document.createElement('div');
-                    c.classList.add('circle');
-                    document.body.appendChild(c);
-                    c.style.top = `${Math.random() * 70 + 10}%`;
-                    c.style.left = `${Math.random() * 80 + 10}%`;
-                    c.style.backgroundColor = getRandomColor();
-                    inflateAndExplode(c);
-                }, 100 * (i + 1));
-            }
-        }, 1500);
-
-        function getRandomColor() {
-            const letters = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-
-        function inflateAndExplode(balloon) {
-            let size = 60;
-            const interval = setInterval(() => {
-                size += 10;
-                balloon.style.width = size + 'px';
-                balloon.style.height = size + 'px';
-
-                if (size >= 110) {
-                    clearInterval(interval);
-                    explode(balloon);
-                }
-            }, 50);
-        }
-
-        function explode(balloon) {
-            balloon.classList.add('exploding');
-            balloon.style.border = `solid 2px ${balloon.style.backgroundColor}`;
-            balloon.style.backgroundColor = 'white';
-
-            setTimeout(() => {
-                balloon.remove();
-            }, 700);
-        }
-    </script>
 </body>
 
 </html>
